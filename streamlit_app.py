@@ -9,8 +9,11 @@ from PIL import Image
 import os
 from dotenv import load_dotenv
 
+# Set the path to the .env file as an environment variable
+os.environ['DOTENV_PATH'] = '.env'
+
 # Load the environment variables
-load_dotenv()
+load_dotenv(os.environ['DOTENV_PATH'])
 
 cred1 = {
     "type": os.getenv("CRED1_TYPE"),
