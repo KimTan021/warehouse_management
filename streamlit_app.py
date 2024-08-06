@@ -8,71 +8,66 @@ from streamlit_option_menu import option_menu
 from PIL import Image
 import os
 from dotenv import load_dotenv
+import toml
 
-# Set the path to the .env file as an environment variable
-# Set the path as environment variable
+cred1_file = toml.load("secrets.toml")
 
-
-dotenv_path = os.path.join(os.getcwd(), '.env')
-
-# Load the environment variables
-load_dotenv(dotenv_path)
 
 cred1 = {
-    "type": os.getenv("CRED1_TYPE"),
-    "project_id": os.getenv("CRED1_PROJECT_ID"),
-    "private_key_id": os.getenv("CRED1_PRIVATE_KEY_ID"),
-    "private_key": os.getenv("CRED1_PRIVATE_KEY").replace('\\n', '\n'),
-    "client_email": os.getenv("CRED1_CLIENT_EMAIL"),
-    "client_id": os.getenv("CRED1_CLIENT_ID"),
-    "auth_uri": os.getenv("CRED1_AUTH_URI"),
-    "token_uri": os.getenv("CRED1_TOKEN_URI"),
-    "auth_provider_x509_cert_url": os.getenv("CRED1_AUTH_PROVIDER_X509_CERT_URL"),
-    "client_x509_cert_url": os.getenv("CRED1_CLIENT_X509_CERT_URL"),
-    "universe_domain": os.getenv("CRED1_UNIVERSE_DOMAIN"),
+    "type": cred1_file['gsheets_3']['type'],
+    "project_id": cred1_file['gsheets_3']['project_id'],
+    "private_key_id": cred1_file['gsheets_3']['private_key_id'],
+    "private_key": cred1_file['gsheets_3']['private_key'],
+    "client_email": cred1_file['gsheets_3']['client_email'],
+    "client_id": cred1_file['gsheets_3']['client_id'],
+    "auth_uri": cred1_file['gsheets_3']['auth_uri'],
+    "token_uri": cred1_file['gsheets_3']['token_uri'],
+    "auth_provider_x509_cert_url": cred1_file['gsheets_3']['auth_provider_x509_cert_url'],
+    "client_x509_cert_url": cred1_file['gsheets_3']['client_x509_cert_url'],
+    "universe_domain": cred1_file['gsheets_3']['universe_domain'],
 }
 
 cred2 = {
-    "type": os.getenv("CRED2_TYPE"),
-    "project_id": os.getenv("CRED2_PROJECT_ID"),
-    "private_key_id": os.getenv("CRED2_PRIVATE_KEY_ID"),
-    "private_key": os.getenv("CRED2_PRIVATE_KEY").replace('\\n', '\n'),
-    "client_email": os.getenv("CRED2_CLIENT_EMAIL"),
-    "client_id": os.getenv("CRED2_CLIENT_ID"),
-    "auth_uri": os.getenv("CRED2_AUTH_URI"),
-    "token_uri": os.getenv("CRED2_TOKEN_URI"),
-    "auth_provider_x509_cert_url": os.getenv("CRED2_AUTH_PROVIDER_X509_CERT_URL"),
-    "client_x509_cert_url": os.getenv("CRED2_CLIENT_X509_CERT_URL"),
-    "universe_domain": os.getenv("CRED2_UNIVERSE_DOMAIN"),
+    "type": cred1_file['gsheets_4']['type'],
+    "project_id": cred1_file['gsheets_4']['project_id'],
+    "private_key_id": cred1_file['gsheets_4']['private_key_id'],
+    "private_key": cred1_file['gsheets_4']['private_key'],
+    "client_email": cred1_file['gsheets_4']['client_email'],
+    "client_id": cred1_file['gsheets_4']['client_id'],
+    "auth_uri": cred1_file['gsheets_4']['auth_uri'],
+    "token_uri": cred1_file['gsheets_4']['token_uri'],
+    "auth_provider_x509_cert_url": cred1_file['gsheets_4']['auth_provider_x509_cert_url'],
+    "client_x509_cert_url": cred1_file['gsheets_4']['client_x509_cert_url'],
+    "universe_domain": cred1_file['gsheets_4']['universe_domain'],
 }
 
 
 cred3 = {
-    "type": os.getenv("CRED3_TYPE"),
-    "project_id": os.getenv("CRED3_PROJECT_ID"),
-    "private_key_id": os.getenv("CRED3_PRIVATE_KEY_ID"),
-    "private_key": os.getenv("CRED3_PRIVATE_KEY").replace('\\n', '\n'),
-    "client_email": os.getenv("CRED3_CLIENT_EMAIL"),
-    "client_id": os.getenv("CRED3_CLIENT_ID"),
-    "auth_uri": os.getenv("CRED3_AUTH_URI"),
-    "token_uri": os.getenv("CRED3_TOKEN_URI"),
-    "auth_provider_x509_cert_url": os.getenv("CRED3_AUTH_PROVIDER_X509_CERT_URL"),
-    "client_x509_cert_url": os.getenv("CRED3_CLIENT_X509_CERT_URL"),
-    "universe_domain": os.getenv("CRED3_UNIVERSE_DOMAIN"),
+    "type": cred1_file['gsheets_1']['type'],
+    "project_id": cred1_file['gsheets_1']['project_id'],
+    "private_key_id": cred1_file['gsheets_1']['private_key_id'],
+    "private_key": cred1_file['gsheets_1']['private_key'],
+    "client_email": cred1_file['gsheets_1']['client_email'],
+    "client_id": cred1_file['gsheets_1']['client_id'],
+    "auth_uri": cred1_file['gsheets_1']['auth_uri'],
+    "token_uri": cred1_file['gsheets_1']['token_uri'],
+    "auth_provider_x509_cert_url": cred1_file['gsheets_1']['auth_provider_x509_cert_url'],
+    "client_x509_cert_url": cred1_file['gsheets_1']['client_x509_cert_url'],
+    "universe_domain": cred1_file['gsheets_1']['universe_domain'],
 }
 
 cred4 = {
-    "type": os.getenv("CRED4_TYPE"),
-    "project_id": os.getenv("CRED4_PROJECT_ID"),
-    "private_key_id": os.getenv("CRED4_PRIVATE_KEY_ID"),
-    "private_key": os.getenv("CRED4_PRIVATE_KEY").replace('\\n', '\n'),
-    "client_email": os.getenv("CRED4_CLIENT_EMAIL"),
-    "client_id": os.getenv("CRED4_CLIENT_ID"),
-    "auth_uri": os.getenv("CRED4_AUTH_URI"),
-    "token_uri": os.getenv("CRED4_TOKEN_URI"),
-    "auth_provider_x509_cert_url": os.getenv("CRED4_AUTH_PROVIDER_X509_CERT_URL"),
-    "client_x509_cert_url": os.getenv("CRED4_CLIENT_X509_CERT_URL"),
-    "universe_domain": os.getenv("CRED4_UNIVERSE_DOMAIN"),
+    "type": cred1_file['gsheets_2']['type'],
+    "project_id": cred1_file['gsheets_2']['project_id'],
+    "private_key_id": cred1_file['gsheets_2']['private_key_id'],
+    "private_key": cred1_file['gsheets_2']['private_key'],
+    "client_email": cred1_file['gsheets_2']['client_email'],
+    "client_id": cred1_file['gsheets_2']['client_id'],
+    "auth_uri": cred1_file['gsheets_2']['auth_uri'],
+    "token_uri": cred1_file['gsheets_2']['token_uri'],
+    "auth_provider_x509_cert_url": cred1_file['gsheets_2']['auth_provider_x509_cert_url'],
+    "client_x509_cert_url": cred1_file['gsheets_2']['client_x509_cert_url'],
+    "universe_domain": cred1_file['gsheets_2']['universe_domain'],
 }
 
 st.set_page_config(layout="wide")
