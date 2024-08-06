@@ -3,11 +3,8 @@ import pandas as pd
 import gspread
 import streamlit as st
 from oauth2client.service_account import ServiceAccountCredentials
-# from streamlit_gsheets import GSheetsConnection
 from streamlit_option_menu import option_menu
 from PIL import Image
-import os
-from dotenv import load_dotenv
 import toml
 
 cred1_file = toml.load("secrets.toml")
@@ -178,15 +175,6 @@ if page == "RECEIVE FORM":
     )
     url = "1w_4eJdKW5l5WeSk5F4yAKARFxUhZVbx9j3_ujeS_BZ0"
 
-    # Establishing a Google Sheets connection
-    # conn = st.connection("gsheets", type=GSheetsConnection)
-
-    # Fetch existing data from the specified worksheet
-    # existing_data = conn.read(spreadsheet=url, usecols=list(range(7)), ttl=100)
-    # existing_data = existing_data.dropna(how="all")
-    
-    # st.dataframe(existing_data)
-
     products = ["Armchair", "Trolley", "Pallets"]
     color = ["orange", "black", "green"]
 
@@ -252,15 +240,6 @@ if page == "RELEASE FORM":
         unsafe_allow_html=True
     )
     url = "18qFvLbwSkQg3f-A87sLsLq6h7R3nWam0ZAjRPu5rujc"
-
-    # Establishing a Google Sheets connection
-    # conn = st.connection("gsheets", type=GSheetsConnection)
-
-    # Fetch existing data from the specified worksheet
-    # existing_data = conn.read(spreadsheet=url, usecols=list(range(7)), ttl=100)
-    # existing_data = existing_data.dropna(how="all")
-
-    # st.dataframe(existing_data)
 
     products = ["Armchair", "Trolley", "Pallets"]
     color = ["orange", "black", "green"]
