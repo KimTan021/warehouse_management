@@ -10,10 +10,13 @@ import os
 from dotenv import load_dotenv
 
 # Set the path to the .env file as an environment variable
-os.environ['PATH'] = '.env'
+# Set the path as environment variable
+
+
+dotenv_path = os.path.join(os.getcwd(), '.env')
 
 # Load the environment variables
-load_dotenv()
+load_dotenv(dotenv_path)
 
 cred1 = {
     "type": os.getenv("CRED1_TYPE"),
